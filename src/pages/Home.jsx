@@ -3,9 +3,32 @@ import './Home.css'
 import separatorImage from '../HomeImage/seperater-blue.png'; // Update the path accordingly
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar';
+// import MyCarousel from '../components/Carousel ';
+
+
+// Custom hook for auto-incrementing numbers
+function useAutoIncrement(start, max, interval) {
+  const [value, setValue] = useState(start);
+
+  useEffect(() => {
+    if (value < max) {
+      const intervalId = setInterval(() => {
+        setValue(prevValue => (prevValue < max ? prevValue + 1 : prevValue));
+      }, interval);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [value, max, interval]);
+
+  return value;
+}
+
 
 const Home = ({user}) => {
-  const [data, setData] = useState("50");
+  const membersNumber = useAutoIncrement(0, 1, 55);
+  const statesNumber = useAutoIncrement(0, 18, 85);
+  const ratingNumber = useAutoIncrement(0, 5, 55);
+
   const { name, age }=user;
 
 
@@ -98,15 +121,15 @@ const Home = ({user}) => {
         <div className="public_review card">
           <div className="row">
             <div className="col-md-4">
-              <h3>1M+</h3>
+              <h3>{membersNumber}M+</h3>
               <p>Members</p>
             </div>
             <div className="col-md-4">
-              <h3>{data}</h3>
+              <h3>{statesNumber}</h3>
               <p>States</p>
             </div>
             <div className="col-md-4">
-              <h3>5</h3>
+              <h3>{ratingNumber}</h3>
               <p>Rating</p>
             </div>
           </div>
@@ -120,7 +143,9 @@ const Home = ({user}) => {
 
               <p>Discover real stories from individuals and businesses who have joined us in making a meaningful impact on the environment.</p>
             </div>
-            <div className="col-md-7"></div>
+            <div className="col-md-7">
+            {/* <MyCarousel /> */}
+            </div>
           </div>
         </div>
       </div>

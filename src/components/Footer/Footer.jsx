@@ -1,5 +1,9 @@
 import React from 'react'
 import "./Footer.css"
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { FaPhone } from 'react-icons/fa';
+
 const Footer = (user) => {
 
   const {name,age}=user;
@@ -51,8 +55,7 @@ const Footer = (user) => {
           <div className="row">
             <div className="col-md-4 ">
               <div className="d-flex p-3 text-white" >
-                <div className="p-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXvmLn7mps-xlaWIf8U-CIAd8AiQony73Mg&usqp=CAU" alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />
-                </div>
+                <div className="p-1"><MdEmail style={{ color: '#0074D9', fontSize: '24px' }} /></div>
                 <div className="p-1" >
                   <h3>Email</h3>
                   <p>anurag@gmail.com</p>
@@ -62,7 +65,7 @@ const Footer = (user) => {
 
             <div className="col-md-4 ">
               <div className="d-flex p-3 text-white">
-                <div className="p-1"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXvmLn7mps-xlaWIf8U-CIAd8AiQony73Mg&usqp=CAU" alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" /></div>
+                <div className="p-1" > <FaMapMarkerAlt style={{ color: '#0074D9', fontSize: '24px' }}/></div>
                 <div className="p-1" >
                   <h3>Address</h3>
                   <p>Near Big Bazar, Dhanbad</p>
@@ -72,7 +75,7 @@ const Footer = (user) => {
 
             <div className="col-md-4 ">
               <div className="d-flex p-3 text-white">
-                <div className="p-1"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXvmLn7mps-xlaWIf8U-CIAd8AiQony73Mg&usqp=CAU" alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" /></div>
+                <div className="p-1"> <FaPhone style={{ color: '#0074D9', fontSize: '24px' }} /></div>
                 <div className="p-1">
                   <h3>Call Us On</h3>
                   <p>Front Desk:7481009993</p>
